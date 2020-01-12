@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import confLogo from '../images/badge-header.svg';
-import './Badge.css';
+import './styles/Badge.css';
 
-class Badges extends Component {
+class Badge extends Component {
   render() {
     const {
       firstName,
@@ -39,4 +39,4 @@ class Badges extends Component {
   }
 }
 
-export default Badges;
+export default Badge;
