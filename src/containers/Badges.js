@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles/Badges.css';
-import data from '../db.json'
+import data from '../db.json';
 import confLogo from '../images/badge-header.svg';
 import Navbar from '../components/Navbar';
 import BadgesList from '../components/BadgesList';
 
 class BadgesContainer extends Component {
-  state = {badges: []}
+  state = { badges: [] };
 
   componentDidMount() {
     this.setState({
       badges: data.badges
-    })
+    });
   }
 
   render() {
@@ -27,7 +28,9 @@ class BadgesContainer extends Component {
 
         <div className="Badges__container">
           <div className="Badges__buttons">
-            <a href="/badges/new" className="btn btn-primary">Add</a>
+            <Link to="/badges/new" className="btn btn-primary">
+              Add
+            </Link>
           </div>
 
           <BadgesList badges={this.state.badges} />
