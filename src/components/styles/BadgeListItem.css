@@ -1,0 +1,30 @@
+.Badge__list-item {
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 8px 8px 8px 8px;
+  overflow: hidden;
+  height: 100px;
+  margin-bottom: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.Badge__list-item-avatar {
+  width: 20%;
+  text-align: center;
+  padding: 2%;
+}
+
+.Badge__list-item-data {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 3%;
+}
+
+.Badge__list-item-logo {
+  width: 24px;
+}
