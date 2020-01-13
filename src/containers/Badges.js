@@ -2,17 +2,26 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles/Badges.css';
-import data from '../db.json';
 import confLogo from '../images/badge-header.svg';
 import BadgesList from '../components/BadgesList';
 
 class BadgesContainer extends Component {
-  state = { badges: [] };
+  constructor() {
+    super();
+    this.state = { badges: [] };
+  }
 
   componentDidMount() {
-    this.setState({
-      badges: data.badges
-    });
+    this.timeoutId = setTimeout(() => {
+      const data = require('../db.json');
+      this.setState({
+        badges: data.badges
+      });
+    }, 3000);
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeoutId);
   }
 
   render() {
