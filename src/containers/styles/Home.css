@@ -1,0 +1,14 @@
+.Home__content {
+  display: flex;
+  margin: 10%;
+}
+
+.Home__left-box {
+  padding-top: 10%;
+  padding-right: 8%;
+  text-align: left;
+}
+
+.Home__subtitle {
+  font-size: 24px;
+}
