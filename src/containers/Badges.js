@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './styles/Badges.css';
 import data from '../db.json';
 import confLogo from '../images/badge-header.svg';
-import Navbar from '../components/Navbar';
 import BadgesList from '../components/BadgesList';
 
 class BadgesContainer extends Component {
@@ -19,7 +18,6 @@ class BadgesContainer extends Component {
   render() {
     return (
       <div className="Badges">
-        <Navbar />
         <div className="Badges__hero">
           <div className="Badges__container">
             <img src={confLogo} alt="Conf Logo" className="Badges_conf-logo" />

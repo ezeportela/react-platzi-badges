@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import TextInput from './TextInput';
 
 class BadgeForm extends Component {
@@ -16,7 +16,7 @@ class BadgeForm extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <h1>New Attendant</h1>
 
         <form onSubmit={this.handleSubmit}>
@@ -59,7 +59,7 @@ class BadgeForm extends Component {
             Save
           </button>
         </form>
-      </div>
+      </Fragment>
     );
   }
 }
