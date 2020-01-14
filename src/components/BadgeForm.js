@@ -8,18 +8,12 @@ class BadgeForm extends Component {
     });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    console.log('the badge has been submitted!');
-    console.log(this.state);
-  };
-
   render() {
     return (
       <Fragment>
         <h1>New Attendant</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <TextInput
             label="First Name"
             name="firstName"

@@ -3,16 +3,17 @@ import React, { Component } from 'react';
 import './styles/BadgeListItem.css';
 import twitterLogo from '../images/twitter-logo.png';
 
+import Gravatar from './Gravatar';
+
 class BadgeListItem extends Component {
   render() {
     return (
       <li key={this.props.id}>
         <div className="Badge__list-item">
           <div className="Badge__list-item-avatar">
-            <img
+            <Gravatar
               className="img-fluid rounded-circle"
-              src={this.props.avatarUrl}
-              alt="avatar"
+              email={this.props.email}
             />
           </div>
           <div className="Badge__list-item-data">
@@ -20,7 +21,9 @@ class BadgeListItem extends Component {
               {this.props.firstName} {this.props.lastName}
             </span>
             <span>
-              <a href={`https://twitter.com/${this.props.twitter}`} target="__blank">
+              <a
+                href={`https://twitter.com/${this.props.twitter}`}
+                target="__blank">
                 <img
                   src={twitterLogo}
                   alt="Twitter logo"

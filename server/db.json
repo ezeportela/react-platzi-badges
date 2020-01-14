@@ -440,6 +440,22 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Eze",
+      "lastName": "Portela",
+      "email": "eportelab@gmail.com",
+      "jobTitle": "Fullstack Developer",
+      "twitter": "eportela",
+      "id": "mDzekKC"
+    },
+    {
+      "firstName": "Laura",
+      "lastName": "Sanchez",
+      "email": "lsanchez@gmail.com",
+      "jobTitle": "Developer",
+      "twitter": "lsanchez",
+      "id": "KgR5txR"
     }
   ]
 }
