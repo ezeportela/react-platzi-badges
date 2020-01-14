@@ -78,10 +78,14 @@ a.link-unstyled:hover {
 
 .full__container {
   width: 100%;
-  height: 93.9vh;
+  min-height: calc(100vh - 60px);
   padding: 2rem 0;
   background: url('./images/stars.svg'), #1b1b25;
   background-repeat: repeat;
   color: #ffffff;
   text-align: center;
+}
+
+.resize-image {
+  width: 30%;
 }
