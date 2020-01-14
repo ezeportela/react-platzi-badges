@@ -4,24 +4,43 @@ import { Link } from 'react-router-dom';
 import './styles/Badges.css';
 import confLogo from '../images/badge-header.svg';
 import BadgesList from '../components/BadgesList';
+import api from '../api';
+import Spinner from '../components/Spinner';
+import TextInfo from '../components/TextInfo';
 
 class BadgesContainer extends Component {
   constructor() {
     super();
-    this.state = { badges: [] };
+    this.state = {
+      loading: true,
+      error: null,
+      data: [],
+      badges: []
+    };
   }
 
   componentDidMount() {
-    this.timeoutId = setTimeout(() => {
-      const data = require('../db.json');
-      this.setState({
-        badges: data.badges
-      });
-    }, 3000);
+    this.fetchBadges();
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.timeoutId);
+  async fetchBadges() {
+    this.setState({
+      loading: true,
+      error: null
+    });
+
+    try {
+      const data = await api.badges.list();
+      this.setState({
+        loading: false,
+        data
+      });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error: error.message
+      });
+    }
   }
 
   render() {
@@ -40,7 +59,17 @@ class BadgesContainer extends Component {
             </Link>
           </div>
 
-          <BadgesList badges={this.state.badges} />
+          {this.state.loading && <Spinner {...this.state} />}
+
+          {!this.state.loading &&
+            this.state.data.length === 0 &&
+            !this.state.error && <TextInfo text="No badges were found" />}
+
+          {!this.state.loading && this.state.error && (
+            <TextInfo text={this.state.error} />
+          )}
+
+          <BadgesList badges={this.state.data} />
         </div>
       </div>
     );

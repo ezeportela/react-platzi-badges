@@ -1,0 +1,9 @@
+.TextInfo__container {
+  width: 100%;
+  text-align: center;
+  margin: 10% 0 10% 0;
+}
+
+.TextInfo__container p {
+  font-size: 32px;
+}

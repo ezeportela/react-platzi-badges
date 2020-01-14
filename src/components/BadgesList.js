@@ -8,7 +8,7 @@ class BadgesList extends Component {
       <div className="Badges__list">
         <ul className="list-unstyled">
           {this.props.badges.map(badge => (
-            <BadgeListItem {...badge} />
+            <BadgeListItem {...badge} key={badge.id} />
           ))}
         </ul>
       </div>
